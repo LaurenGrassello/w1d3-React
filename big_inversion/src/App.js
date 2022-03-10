@@ -2,23 +2,16 @@ import React from 'react';
 import PersonComponent from './components/PersonComponent';
 import './App.css';
 
-
-let people = [
-{ "firstName": "Jane", "lastName": "Doe", "age": 45, "hairColor": "Black" },
-{ "firstName": "John", "lastName": "Smith", "age": 88, "hairColor": "Brown" },
-{ "firstName": "Millard", "lastName": "Fillmore", "age": 50, "hairColor": "Brown" },
-{ "firstName": "Maria", "lastName": "Smith", "age": 62, "hairColor": "Brown" }
-]
-
 function App() {
   return (
     <div className="App">
-      {people.map = (person => {
-        return <PersonComponent firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor} />
-      })
-      }
+      <PersonComponent firstName="Jane" lastName="Doe" age={45} hairColor="Black"/>
+      <PersonComponent firstName="John" lastName="Smith" age={88} hairColor="Brown"/>
+      <PersonComponent firstName="Millard" lastName="Fillmore" age={50} hairColor="Brown"/>
+      <PersonComponent firstName="Maria" lastName="Smith" age={62} hairColor="Brown"/>
     </div>
   );
 }
+
 
 export default App;
