@@ -6,11 +6,12 @@ const UserForm = (props) => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [passwordConfirm, setPasswordConfirmError] = useState("");
+    const [passwordConfirm, setPasswordConfirm] = useState("");
     const [firstNameError, setFirstNameError] = useState("");
     const [lastNameError, setLastNameError] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
+    const [passwordConfirmError, setPasswordConfirmError] = useState("");
 
     const createUser = (e) => {
         e.preventDefault();
@@ -21,9 +22,11 @@ const UserForm = (props) => {
 
     const userValidateFN = (e) => {
         setFirstName(e.target.value);
-        if (e.target.value.length < 2) {
+        if (firstName.length < 2) {
             setFirstNameError('First name must be at least 2 characters');
-        } 
+        } else {
+            setFirstNameError('');
+        }
     };
 
 
@@ -43,14 +46,24 @@ const UserForm = (props) => {
 
     const userValidatePassword = (e) => {
         setPassword(e.target.value);
-        if (e.target.value.length < 5) {
+        if (password.length < 5) {
             setPasswordError('Must be at least 8 characters');
-        } else if ({ password } !== { passwordConfirm }) {
+        } else{
+            setPasswordError('');
+        }
+    };
+
+    
+    const userValidateConfirm = (e) => {
+        setPasswordConfirm(e.target.value);
+        if (password !== passwordConfirm) {
             setPasswordConfirmError('Passwords must match')
+        } else {
+            setPasswordConfirmError('')
         }
 
-
     };
+
 
 
 
@@ -88,9 +101,9 @@ const UserForm = (props) => {
                 </div>
                 <div>
                     <label class="form-label">Confirm Password: </label>
-                    <input className='m-2' type="text" value={passwordConfirm} onChange={userValidatePassword} />{
-                        passwordError ?
-                        <p style={{ color: 'red' }}>{passwordError}</p> : ''
+                    <input className='m-2' type="text" value={passwordConfirm} onChange={userValidateConfirm} />{
+                        passwordConfirmError ?
+                        <p style={{ color: 'red' }}>{passwordConfirmError}</p> : ''
                 }
                 </div>
                 <input type="submit" value="Create User" />
