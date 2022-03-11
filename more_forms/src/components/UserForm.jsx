@@ -7,16 +7,20 @@ const UserForm = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirm, setPasswordConfirm] = useState("");
-    const [firstNameError, setFirstNameError] = useState("");
-    const [lastNameError, setLastNameError] = useState("");
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
-    const [passwordConfirmError, setPasswordConfirmError] = useState("");
+    const [firstNameError, setFirstNameError] = useState(true);
+    const [lastNameError, setLastNameError] = useState(true);
+    const [emailError, setEmailError] = useState(true);
+    const [passwordError, setPasswordError] = useState(true);
+    const [passwordConfirmError, setPasswordConfirmError] = useState(true);
 
     const createUser = (e) => {
         e.preventDefault();
-        const newUser = { firstName, lastName, email, password };
-        console.log("Welcome", newUser);
+        if(!firstNameError && !lastNameError && !emailError && !passwordError && !passwordConfirmError){
+            const newUser = { firstName, lastName, email, password };
+            console.log("Welcome", newUser);
+        }else{
+            alert("error")
+        }
 
     };
 
@@ -106,7 +110,7 @@ const UserForm = (props) => {
                         <p style={{ color: 'red' }}>{passwordConfirmError}</p> : ''
                 }
                 </div>
-                <input type="submit" value="Create User" />
+                <button>Submit</button>
             </form>
             <div>
                 <h3>Your User Information:</h3>
