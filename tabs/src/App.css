@@ -1,11 +1,16 @@
-.tab{
+.tabContent{
   height: 100px;
   width: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-left: 865px;
   border-style: solid;
   border-color: black;
+}
+
+button{
+  margin: 20px;
+  background-color: white;
+  width: 100px;
+  height: 60px;
 }
 
 .App {
