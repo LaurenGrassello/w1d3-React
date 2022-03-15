@@ -38,18 +38,20 @@ function App() {
 
   return (
     <div className="d-flex justify-content-center">
-      <form onSubmit={(e) => { handleSubmit(e); }}>
+      <form  onSubmit={(e) => { handleSubmit(e); }}>
         <h2>To Do List:</h2>
         <input onChange={(e) => { setNewToDo(e.target.value); }} type='text' value={newToDo} />
         <div>
           <button className="btn btn-primary m-2">Add</button>
         </div>
       </form>
-      <div className="listItems">
+      <div className="d-flex justify-content-center">
+      <div className="col-4 m-4">
       {
         list.map((lists, i) => {
           return <ToDo lists={lists} handleComplete={handleComplete} i={i} handleDelete={handleDelete}/>;
 })}
+      </div>
       </div>
 
     </div>
