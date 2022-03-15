@@ -6,9 +6,9 @@ const ToDo = (props) => {
         toDoClasses.push('strike');
     }
     
-        return (<div key={props.i}>
-            <p className={toDoClasses.join(' ')}>{props.lists.text}</p>
-            <input type="checkbox" checked={props.lists.complete} onChange={(e) => {
+        return (<div className="d-flex justfity-content-center" key={props.i}>
+            <p className={toDoClasses.join('')}>{props.lists.text}</p>
+            <input className="m-2" type="checkbox" checked={props.lists.complete} onChange={(e) => {
                 props.handleComplete(props.i);
             }} />
             <button className="btn btn-warning m-2" onClick={(e) => {
