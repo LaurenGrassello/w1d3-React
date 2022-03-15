@@ -11,7 +11,7 @@ const HelloColor = (props) => {
         )
     } else{
         return(
-            <h3>Error</h3>
+            <h3>Error! Add a word not number</h3>
         )
     }
 

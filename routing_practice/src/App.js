@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Link, Switch, Route } from 'react-router-dom';
 import './App.css';
-import { useParams } from 'react-router-dom';
 import WordAndNumber from './components/WordAndNumber';
 import Home from './components/Home';
 import HelloColor from './components/HelloColor';
