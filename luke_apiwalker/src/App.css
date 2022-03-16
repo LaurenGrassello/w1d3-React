@@ -1,0 +1,29 @@
+.display{
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+label{
+  margin: 5px;
+}
+
+select{
+  width: 100px;
+}
+
+.idSearch{
+  width: 50px;
+  margin-right: 10px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+p{
+  font-weight: bold;
+}
