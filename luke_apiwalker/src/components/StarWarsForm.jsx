@@ -10,21 +10,12 @@ const StarWarsForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (option === 'people') {
-            history.push(`/people/${objectId}`)
-        } else { 
-                history.push(`/planet/${objectId}`)
-            }
-        if (option === 'species')
-            history.push(`/species/${objectId}`)
-        } 
-    
-    
-
+        history.push(`/${option}/${objectId}`)
+    }
     return (
         <div>
             <form className='display' onSubmit={handleSubmit}>
-                <label className='form-label'>Search For:</label>
+                <label value={option} className='form-label'>Search For:</label>
                 <select onChange={(e) => { setOption(e.target.value) }}>
                     <option hidden />
                     <option value='people'>People</option>
